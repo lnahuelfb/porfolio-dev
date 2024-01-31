@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedinIcon from "../components/icons/Linkedin.astro";
+import GitHubIcon from "../components/icons/Github.astro";
+import MailIcon from "../components/icons/Mail.astro";
+---
+
+<Layout title="Nahuel Fernandez dev">
+  <main>
+    <section class="w-full mx-auto lg:w-[740px] py-44">
+      <img
+        class="rounded-full size-12 h-12 mb-4"
+        src="https://avatars.githubusercontent.com/u/61454882?v=4"
+        alt="LNahuelFB photo"
+      />
+      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+        Hola! Soy Nahuel
+        <a
+          href="https://www.linkedin.com/in/nahuel-fernandez-beschtedt/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl text-wrap">
+        <span class="opacity-80">
+          Desarrollador Web con Experiencia Freelance.</span
+        >
+        <span class="opacity-80 text-cyan-400">
+          De Buenos Aires, Argentina.</span
+        >
+      </h2>
+      <nav class="flex gap-x-2 mt-8">
+        <SocialPill
+          href="https://www.linkedin.com/in/nahuel-fernandez-beschtedt/"
+        >
+          <LinkedinIcon class="w-6 h-6" /> Linkedin
+        </SocialPill>
+        <SocialPill href="https://github.com/lnahuelfb">
+          <GitHubIcon class="w-6 h-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill class="w-6 h-6">
+          <MailIcon />
+          lnahuelfernandezb@gmail.com
+        </SocialPill>
+      </nav>
+    </section>
+  </main>
+</Layout>
