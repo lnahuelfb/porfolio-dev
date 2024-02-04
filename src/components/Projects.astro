@@ -1,0 +1,135 @@
+---
+import NextJS from "../components/icons/Next.astro";
+import Tailwind from "../components/icons/Tailwind.astro";
+import HTML from "../components/icons/Html.astro";
+import CSS from "../components/icons/Css.astro";
+import React from "../components/icons/React.astro";
+import Mongo from "../components/icons/Mongo.astro";
+import Node from "../components/icons/Node.astro";
+import Express from "../components/icons/Express.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black/20 text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#73bcf6]/20, text-[#73bcf6]",
+    icon: Tailwind,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-orange-500/20 text-orange-500",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-blue-500/20 text-blue-500",
+    icon: CSS,
+  },
+  REACT: {
+    name: "React.JS",
+    class: "bg-[#00d8ff]/20 text-[#00d8ff]",
+    icon: React,
+  },
+  MONGO: {
+    name: "MongoDB",
+    class: "bg-[#00ed64]/20 text-[#00ed64]",
+    icon: Mongo,
+  },
+  NODE: {
+    name: "Node.JS",
+    class: "bg-[#529f43]/20 text-[#529f43]",
+    icon: Node,
+  },
+  EXPRESS: {
+    name: "Express.js",
+    class: "bg-white/20 text-white",
+    icon: Express,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Variocolorida",
+    description:
+      "Colaboré estrechamente con la diseñadora para comprender sus necesidades y traducirlas en una experiencia de usuario intuitiva y visualmente atractiva.",
+    link: "variocolorida.vercel.app",
+    github: "https://github.com/lnahuelfb/variocolorida",
+    image: "/projects/variocolorida.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT, TAGS.NEXT, TAGS.MONGO],
+  },
+  {
+    title: "Rick and Morty",
+    description:
+      "Una aplicación donde se puede ver la información de los personajes de Rick and Morty, incluye una barra de busqueda para buscar determinados personajes.",
+    link: "https://rick-and-morty-app-lnahuelfb.vercel.app/",
+    github: "https://github.com/lnahuelfb/rick-and-morty",
+    image: "/projects/rickandmorty.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT],
+  },
+  {
+    title: "ToDo List",
+    description:
+      "Una aplicación donde se puede crear, editar y eliminar tareas.",
+    link: "https://to-do-list-nahuelfb.vercel.app/",
+    github: "https://github.com/lnahuelfb/toDoList-fullstack-backend",
+    image: "/projects/todo.webp",
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.REACT,
+      TAGS.NODE,
+      TAGS.MONGO,
+      TAGS.EXPRESS,
+    ],
+  },
+  {
+    title: "PokeRandom",
+    description:
+      "Una aplicación donde al tocar un boton te devuelve un pokemon al azar.",
+    link: "https://poke-random-react.vercel.app/",
+    github: "https://github.com/lnahuelfb/PokeRandom-React",
+    image: "/projects/pokerandom.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, link, image, github }) => (
+    <article class="my-10">
+      <h3 class="text-2xl font-semibold text-cyan-400 mb2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            {
+              <span
+                class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${tag.class}`}
+              >
+                {tag.icon && <tag.icon class="size-4" />}
+                {tag.name}
+              </span>
+            }
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${title}`}
+      />
+      <a
+        class="w-24 mb-10 color-yellow-200"
+        href={`${link}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {title}
+      </a>
+    </article>
+  ))
+}

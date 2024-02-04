@@ -1,0 +1,39 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="rounded-lg shadow m-4 bg-black/5 dark:bg-black/20 backdrop-blur-lg w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
+>
+  <div
+    class="w-50 max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+  >
+    <span class="text-sm sm:text-center text-gray-400">
+      © {currentYear}
+      <a
+        href="https://www.linkedin.com/in/nahuel-fernandez-beschtedt/"
+        class="hover:underline">Nahuel Fernandez Beschtedt</a
+      >
+    </span>
+  </div>
+  <ul
+    class="flex flex-wrap items-center mt-3 text-sm font-medium text-white/90 sm:mt-0"
+  >
+    <li>
+      <a href="#top" class="hover:underline me-4 md:me-6">Inicio</a>
+    </li>
+    <li>
+      <a href="#Experiencia" class="hover:underline me-4 md:me-6">Experiencia</a
+      >
+    </li>
+    <li>
+      <a href="#proyectos" class="hover:underline me-4 md:me-6">Proyectos</a>
+    </li>
+    <li>
+      <a href="#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mi</a>
+    </li>
+    <li>
+      <a href="#contacto" class="hover:underline">Contacto</a>
+    </li>
+  </ul>
+</footer>
