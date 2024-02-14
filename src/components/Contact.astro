@@ -1,5 +1,5 @@
 ---
-
+import SocialPill from "./SocialPill.astro";
 ---
 
 <article class="w-full mx-auto lg:w-[740px] pb-24" id="contacto">
@@ -29,6 +29,10 @@
       <input type="text" id="message" />
     </label>
 
-    <button type="submit" class="mt-10">Enviar</button>
+    <button
+      class="flex justify-center items-center my-10 rounded-full border border-white/10 gap-x-4 py-1 px-2 text-xs md:text-base md:py-2 md:px-4 bg-white/5 hover:scale-110 hover:bg-white/10 transition"
+    >
+      Enviar
+    </button>
   </form>
 </article>
