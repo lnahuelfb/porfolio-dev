@@ -6,7 +6,7 @@ import Device from "./icons/Device.astro";
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, link, image, github }) => (
+  PROJECTS.map(({ title, description, tags, link, image }) => (
     <article class="my-10">
       <h3 class="text-2xl font-semibold text-cyan-400 mb2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
@@ -32,12 +32,15 @@ import Device from "./icons/Device.astro";
         />
       </picture>
       <div class="flex justify-around flex-col items-center mt-8 sm:flex-row">
-        <ProjectButton class="" href={link}>
+        <ProjectButton class="" href={link.project}>
           <Device />
           {title}
         </ProjectButton>
 
-        <ProjectButton class="my-2 md:w-fit sm:my-0 sm:w-[70%]" href={github}>
+        <ProjectButton
+          class="my-2 md:w-fit sm:my-0 sm:w-[70%]"
+          href={link.github}
+        >
           <Github />
           Repositorio de Github
         </ProjectButton>

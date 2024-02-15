@@ -55,8 +55,10 @@ const PROJECTS = [
     title: "Variocolorida",
     description:
       "Colaboré estrechamente con la diseñadora para comprender sus necesidades y traducirlas en una experiencia de usuario intuitiva y visualmente atractiva.",
-    link: "variocolorida.vercel.app",
-    github: "https://github.com/lnahuelfb/variocolorida",
+    link: {
+      project: "variocolorida.vercel.app",
+      github: "https://github.com/lnahuelfb/variocolorida"
+    },
     image: "/projects/variocolorida.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT, TAGS.NEXT, TAGS.MONGO],
   },
@@ -64,8 +66,10 @@ const PROJECTS = [
     title: "Rick and Morty",
     description:
       "Una aplicación donde se puede ver la información de los personajes de Rick and Morty, incluye una barra de busqueda para buscar determinados personajes.",
-    link: "https://rick-and-morty-app-lnahuelfb.vercel.app/",
-    github: "https://github.com/lnahuelfb/rick-and-morty",
+    link: {
+      project: "https://rick-and-morty-app-lnahuelfb.vercel.app/",
+      github: "https://github.com/lnahuelfb/rick-and-morty",
+    },
     image: "/projects/rickandmorty.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT],
   },
@@ -73,8 +77,10 @@ const PROJECTS = [
     title: "ToDo List",
     description:
       "Una aplicación donde se puede crear, editar y eliminar tareas.",
-    link: "https://to-do-list-nahuelfb.vercel.app/",
-    github: "https://github.com/lnahuelfb/toDoList-fullstack-backend",
+    link: {
+      project: "https://to-do-list-nahuelfb.vercel.app/",
+      github: "https://github.com/lnahuelfb/toDoList-fullstack-backend"
+    },
     image: "/projects/todo.webp",
     tags: [
       TAGS.HTML,
@@ -84,16 +90,7 @@ const PROJECTS = [
       TAGS.MONGO,
       TAGS.EXPRESS,
     ],
-  },
-  {
-    title: "PokeRandom",
-    description:
-      "Una aplicación donde al tocar un boton te devuelve un pokemon al azar.",
-    link: "https://poke-random-react.vercel.app/",
-    github: "https://github.com/lnahuelfb/PokeRandom-React",
-    image: "/projects/pokerandom.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT],
-  },
+  }
 ];
 
 export { PROJECTS };
