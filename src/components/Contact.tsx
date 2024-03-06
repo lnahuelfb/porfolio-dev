@@ -1,58 +1,26 @@
 import React, { type FormEvent, useState } from 'react';
 
 const Contact = () => {
-
   const [responseMessage, setResponseMessage] = useState("");
 
-  async function submit(e: FormEvent<HTMLFormElement>) {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const formData = new FormData(e.target as HTMLFormElement);
     const response = await fetch("/api/form", {
       method: "POST",
       body: formData,
     });
 
+    console.log(formData)
+
     const data = await response.json();
+    console.log(data)
 
     if (data.message) {
       setResponseMessage(data.message);
     }
   }
-
-  // const handleInputChange = (e) => {
-  //   setInput({
-  //     ...oninput,
-  //     [e.target.name]: e.target.value
-  //   })
-  // }
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   setLoading(true)
-
-  //   try {
-  //     const response = await fetch('https://nahuelfb.vercel.app/api/send-email', {
-  //       method: 'POST',
-  //       body: JSON.stringify(oninput),
-  //       headers: {
-  //         'Acept': 'application/json',
-  //         'Content-Type': 'application/json'
-  //       }
-  //     })
-
-  //     setLoading(false)
-  //     console.log(oninput)
-
-  //     if (!response.ok) throw new Error('Algo salió mal :c')
-
-  //     return window.alert('Email enviado!')
-
-  //   } catch (error) {
-
-  //     setLoading(false)
-  //     console.log(error)
-  //   }
-  // }
 
   return (
     <article>
@@ -80,8 +48,6 @@ const Contact = () => {
           <input
             type="text"
             name="name"
-            // onChange={handleInputChange}
-            // value={input.name}
             required
           />
         </label>
@@ -91,8 +57,6 @@ const Contact = () => {
           <input
             type="text"
             name='company'
-          // onChange={handleInputChange}
-          // value={oninput.company}
           />
         </label>
 
@@ -101,8 +65,6 @@ const Contact = () => {
           <input
             type="text"
             name="subject"
-            // onChange={handleInputChange}
-            // value={oninput.subject}
             required
           />
         </label>
@@ -112,8 +74,6 @@ const Contact = () => {
           <input
             type="text"
             name='email'
-            // onChange={handleInputChange}
-            // value={input.email}
             required
           />
         </label>
@@ -123,8 +83,6 @@ const Contact = () => {
           <textarea
             className="min-h-12"
             name='message'
-            // value={input.message}
-            // onChange={handleInputChange}
             required
           />
         </label>
@@ -135,6 +93,7 @@ const Contact = () => {
       </form>
 
       {responseMessage.length > 0 && <h1>{responseMessage}</h1>}
+
     </article>
   )
 }
