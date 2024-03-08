@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 
-export const prerender = false;
+export const prerender = true;
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
@@ -10,8 +10,6 @@ export const POST: APIRoute = async ({ request }) => {
   const subject = data.get("subject");
   const email = data.get("email");
   const message = data.get("message");
-
-  console.log(data)
 
   if (!name || !email || !message || !company || !subject) {
     return new Response(
@@ -25,7 +23,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const response = await fetch('http://localhost:3000/send-email', {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify(Object.fromEntries(data)),
       headers: {
         'Acept': 'application/json',
         'Content-Type': 'application/json'
