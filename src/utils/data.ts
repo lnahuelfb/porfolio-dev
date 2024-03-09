@@ -16,7 +16,7 @@ const TAGS = {
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#73bcf6]/20, text-[#73bcf6]",
+    class: "bg-[#73bcf6]/20 text-[#73bcf6]",
     icon: TailwindIcon,
   },
   HTML: {
@@ -56,7 +56,7 @@ const TAGS = {
   }
 };
 
-const PROJECTS = [
+export const PROJECTS = [
   {
     title: "Variocolorida",
     description:
@@ -97,4 +97,11 @@ const PROJECTS = [
   },
 ];
 
-export { PROJECTS };
+export const EXPERIENCE = [
+  {
+    date: "2023 - Actualidad",
+    title: "Desarrollador web Freelance",
+    description:
+      "Como desarrollador web freelance tengo experiencia en tecnologías como React, Next.js y MongoDB. Especializado en la creación de aplicaciones web modernas y dinámicas. Comprometido con la calidad y la usabilidad, colaborando estrechamente con clientes para convertir sus visiones en realidad.",
+  },
+];
