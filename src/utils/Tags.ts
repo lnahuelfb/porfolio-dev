@@ -1,11 +1,12 @@
-import NextJS from "../icons/Next.astro";
-import Tailwind from "../icons/Tailwind.astro";
-import HTML from "../icons/Html.astro";
-import CSS from "../icons/Css.astro";
-import React from "../icons/React.astro";
-import Mongo from "../icons/Mongo.astro";
-import Node from "../icons/Node.astro";
-import Express from "../icons/Express.astro";
+import NextJS from "components/icons/Next.astro";
+import TailwindIcon from "components/icons/Tailwind.astro";
+import HTML from "components/icons/Html.astro";
+import CSS from "components/icons/Css.astro";
+import React from "components/icons/React.astro";
+import Mongo from "components/icons/Mongo.astro";
+import Node from "components/icons/Node.astro";
+import Express from "components/icons/Express.astro";
+import AstroIcon from "components/icons/AstroIcon.astro";
 
 const TAGS = {
   NEXT: {
@@ -16,7 +17,7 @@ const TAGS = {
   TAILWIND: {
     name: "Tailwind CSS",
     class: "bg-[#73bcf6]/20, text-[#73bcf6]",
-    icon: Tailwind,
+    icon: TailwindIcon,
   },
   HTML: {
     name: "HTML",
@@ -48,6 +49,11 @@ const TAGS = {
     class: "bg-white/20 text-white",
     icon: Express,
   },
+  ASTRO: {
+    name: 'Astro',
+    class: 'bg-[#ff5d01]/20 text-[#ff5d01]',
+    icon: AstroIcon,
+  }
 };
 
 const PROJECTS = [
@@ -56,11 +62,27 @@ const PROJECTS = [
     description:
       "Colaboré estrechamente con la diseñadora para comprender sus necesidades y traducirlas en una experiencia de usuario intuitiva y visualmente atractiva.",
     link: {
-      project: "variocolorida.vercel.app",
+      project: "https://variocolorida.vercel.app",
       github: "https://github.com/lnahuelfb/variocolorida"
     },
     image: "/projects/variocolorida.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT, TAGS.NEXT, TAGS.MONGO],
+  },
+  {
+    title: "Porfolio",
+    description:
+      "Este porfolio fue desarrollado con las siguientes tecnologías",
+    link: {
+      project: "https://to-do-list-nahuelfb.vercel.app/",
+      github: "https://github.com/lnahuelfb/porfolio-dev"
+    },
+    image: "/projects/porfolio.webp",
+    tags: [
+      TAGS.HTML,
+      TAGS.TAILWIND,
+      TAGS.REACT,
+      TAGS.ASTRO
+    ],
   },
   {
     title: "Rick and Morty",
@@ -73,24 +95,6 @@ const PROJECTS = [
     image: "/projects/rickandmorty.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT],
   },
-  {
-    title: "ToDo List",
-    description:
-      "Una aplicación donde se puede crear, editar y eliminar tareas.",
-    link: {
-      project: "https://to-do-list-nahuelfb.vercel.app/",
-      github: "https://github.com/lnahuelfb/toDoList-fullstack-backend"
-    },
-    image: "/projects/todo.webp",
-    tags: [
-      TAGS.HTML,
-      TAGS.CSS,
-      TAGS.REACT,
-      TAGS.NODE,
-      TAGS.MONGO,
-      TAGS.EXPRESS,
-    ],
-  }
 ];
 
 export { PROJECTS };

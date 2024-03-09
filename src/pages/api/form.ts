@@ -39,12 +39,6 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    return new Response(JSON.stringify({
-      message: 'Todo ok bro'
-    }), {
-      status: 200
-    })
-
   } catch (error) {
     console.log(error)
   }

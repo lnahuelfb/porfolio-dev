@@ -1,5 +1,5 @@
 ---
-import { PROJECTS } from "./utils/Tags.js";
+import { PROJECTS } from "utils/Tags.js";
 import ProjectButton from "./ProjectButton.astro";
 import Github from "./icons/Github.astro";
 import Device from "./icons/Device.astro";
@@ -29,6 +29,7 @@ import Device from "./icons/Device.astro";
           class="rounded shadow-2xl shadow-white/10"
           src={image}
           alt={`Captura de pantalla del proyecto ${title}`}
+          loading="lazy"
         />
       </picture>
       <div class="flex justify-around flex-col items-center mt-8 sm:flex-row">
