@@ -21,7 +21,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/send-email', {
+    const response = await fetch('https://mailer-lgen.onrender.com/send-email', {
       method: 'POST',
       body: JSON.stringify(Object.fromEntries(data)),
       headers: {
@@ -47,7 +47,7 @@ export const POST: APIRoute = async ({ request }) => {
     JSON.stringify({
       message: "¡Éxito!"
     }),
-    { status: 200 }
+    { status: 201 }
   );
 };
 
