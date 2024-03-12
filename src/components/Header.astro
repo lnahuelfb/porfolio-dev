@@ -24,7 +24,7 @@ import Menu from "./icons/Menu.astro";
         <a href="#contacto" class="text-gray-300 hover:text-white">Contacto</a>
       </div>
     </nav>
-    <div class="lg:hidden relative">
+    <div class="lg:hidden relative flex items-center">
       <button id="menu-toggle" class="text-white focus:outline-none">
         <Menu />
       </button>
@@ -55,24 +55,26 @@ import Menu from "./icons/Menu.astro";
   const menuIcon = document.querySelector(".menu-icon");
   const menu = document.getElementById("menu");
 
-  menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+  menuToggle?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
 
-    if (menu.classList.contains("hidden")) {
-      menuIcon.innerHTML = `
+    if (menu?.classList.contains("hidden")) {
+      if (menuIcon)
+        menuIcon.innerHTML = `
         <svg class="h-6 w-6 menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       `;
     } else {
-      menuIcon.innerHTML = `
+      if (menuIcon)
+        menuIcon.innerHTML = `
         <svg class="h-6 w-6 menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       `;
     }
 
-    document.body.style.overflow = menu.classList.contains("hidden")
+    document.body.style.overflow = menu?.classList.contains("hidden")
       ? "auto"
       : "hidden";
   });
@@ -81,8 +83,9 @@ import Menu from "./icons/Menu.astro";
 
   menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      menu.classList.add("hidden");
-      menuIcon.innerHTML = `
+      menu?.classList.add("hidden");
+      if (menuIcon)
+        menuIcon.innerHTML = `
         <svg class="h-6 w-6 menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
