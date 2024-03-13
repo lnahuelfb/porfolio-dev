@@ -7,8 +7,11 @@ import Mongo from "components/icons/Mongo.astro";
 import Node from "components/icons/Node.astro";
 import Express from "components/icons/Express.astro";
 import AstroIcon from "components/icons/AstroIcon.astro";
+import TypescriptIcon from 'components/icons/TypescriptIcon.astro'
+import { type Techs, type Projects, type Experience } from "./interfaces";
 
-const TAGS = {
+
+const TAGS: Techs = {
   NEXT: {
     name: "Next.js",
     class: "bg-black/20 text-white",
@@ -53,10 +56,15 @@ const TAGS = {
     name: 'Astro',
     class: 'bg-[#ff5d01]/20 text-[#ff5d01]',
     icon: AstroIcon,
+  },
+  TYPESCRIPT: {
+    name: 'TypeScript',
+    class: 'bg-[#007acc]/5 text-[#007acc]',
+    icon: TypescriptIcon
   }
-};
+}
 
-export const PROJECTS = [
+export const PROJECTS: Projects[] = [
   {
     title: "Variocolorida",
     description:
@@ -66,7 +74,13 @@ export const PROJECTS = [
       github: "https://github.com/lnahuelfb/variocolorida"
     },
     image: "/projects/variocolorida.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT, TAGS.NEXT, TAGS.MONGO],
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.REACT,
+      TAGS.NEXT,
+      TAGS.MONGO
+    ],
   },
   {
     title: "Porfolio",
@@ -85,6 +99,20 @@ export const PROJECTS = [
     ],
   },
   {
+    title: 'App de envío de emails',
+    description: 'App para enviar los mails del porfolio a mi casilla de correos.',
+    link: {
+      project: 'https://mailer-lgen.onrender.com/send-email',
+      github: 'https://github.com/lnahuelfb/mailer'
+    },
+    image: '',
+    tags: [
+      TAGS.TYPESCRIPT,
+      TAGS.NODE,
+      TAGS.EXPRESS
+    ]
+  },
+  {
     title: "Rick and Morty",
     description:
       "Una aplicación donde se puede ver la información de los personajes de Rick and Morty, incluye una barra de busqueda para buscar determinados personajes.",
@@ -93,11 +121,15 @@ export const PROJECTS = [
       github: "https://github.com/lnahuelfb/rick-and-morty",
     },
     image: "/projects/rickandmorty.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.REACT],
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.REACT
+    ],
   },
 ];
 
-export const EXPERIENCE = [
+export const EXPERIENCE: Experience[] = [
   {
     date: "2023 - Actualidad",
     title: "Desarrollador web Freelance",
