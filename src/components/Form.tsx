@@ -1,9 +1,15 @@
-import React from "react";
-import formSubmit from "utils/formSubmit";
+import React, { useState, type FormEvent } from "react";
+import submit from "utils/submit";
 
 export default function Form() {
+  const [success, setSuccess] = useState<boolean>(false)
+
+  const formSubmit = (e: FormEvent<HTMLFormElement>) => {
+    setSuccess(Boolean(submit(e)))
+  }
+
   return (
-    <form className="flex flex-col" onSubmit={formSubmit}>
+    <form className="flex flex-col" onSubmit={(e) => formSubmit(e)}>
       <label htmlFor="name" className="flex flex-col">
         Nombre:
         <input className="rounded" type="text" name="name" required />
@@ -34,6 +40,8 @@ export default function Form() {
       >
         Enviar
       </button>
+
+      {success == true ? (<h3>Mensaje envíado!</h3>) : null}
     </form>
   );
 }

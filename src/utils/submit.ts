@@ -1,7 +1,8 @@
-import { type FormEvent } from 'react'
+import type { FormEvent } from 'react'
 
-const formSubmit = async (e: FormEvent<HTMLFormElement>) => {
+const submit = async (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
+
   const formData = new FormData(e.target as HTMLFormElement);
 
   try {
@@ -12,15 +13,13 @@ const formSubmit = async (e: FormEvent<HTMLFormElement>) => {
 
     const data = await response.json();
 
-    if (data.message) {
-      console.log(data.message)
-      return data.message
+    if (data.status == 201) {
+      return true
     }
-
-    if (data.status == 201) return data.message
   } catch (error) {
     console.error(error)
+    return false
   }
 }
 
-export default formSubmit
+export default submit

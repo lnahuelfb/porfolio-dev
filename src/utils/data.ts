@@ -7,9 +7,9 @@ import Mongo from "components/icons/Mongo.astro";
 import Node from "components/icons/Node.astro";
 import Express from "components/icons/Express.astro";
 import AstroIcon from "components/icons/AstroIcon.astro";
+import Mail from "components/icons/Mail.astro";
 import TypescriptIcon from 'components/icons/TypescriptIcon.astro'
-import { type Techs, type Projects, type Experience } from "./interfaces";
-
+import type { Techs, Projects, Experience } from "./interfaces";
 
 const TAGS: Techs = {
   NEXT: {
@@ -105,7 +105,7 @@ export const PROJECTS: Projects[] = [
       project: 'https://mailer-lgen.onrender.com/send-email',
       github: 'https://github.com/lnahuelfb/mailer'
     },
-    image: '',
+    image: '/projects/mails.webp',
     tags: [
       TAGS.TYPESCRIPT,
       TAGS.NODE,
