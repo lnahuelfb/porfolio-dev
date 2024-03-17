@@ -1,7 +1,7 @@
 export interface Tech {
   name: string
-  class: string
-  icon: Record<string, any>
+  style: string
+  icon: string
 }
 
 export interface Techs {

@@ -41,7 +41,7 @@ export default function Form() {
         Enviar
       </button>
 
-      {success == true ? (<h3>Mensaje envíado!</h3>) : null}
+      {success === true ? (<h3>Mensaje envíado!</h3>) : null}
     </form>
   );
 }

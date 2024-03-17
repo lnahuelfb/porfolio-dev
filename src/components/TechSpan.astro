@@ -1,0 +1,30 @@
+---
+import Next from "./icons/Next.astro";
+import HTML from "./icons/Html.astro";
+import CSS from "./icons/Css.astro";
+import React from "./icons/React.astro";
+import Mongo from "./icons/Mongo.astro";
+import Node from "./icons/Node.astro";
+import Express from "./icons/Express.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import TypescriptIcon from "./icons/TypescriptIcon.astro";
+import Tailwind from "./icons/Tailwind.astro";
+
+const {style, name, icon} = Astro.props
+---
+
+<span
+class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${style}`}
+>
+  {icon === 'NextJS' ? <Next class="size-4"/> : null}
+  {icon === 'HTML' ? <HTML class="size-4"/> : null}
+  {icon === 'CSS' ? <CSS class="size-4"/> : null}
+  {icon === 'React' ? <React class="size-4"/> : null}
+  {icon === 'Mongo' ? <Mongo class="size-4"/> : null}
+  {icon === 'Node' ? <Node class="size-4"/> : null}
+  {icon === 'Express' ? <Express class="size-4"/> : null}
+  {icon === 'Tailwind' ? <Tailwind class="size-4"/> : null}
+  {icon === 'Astro' ? <AstroIcon class="size-4"/> : null}
+  {icon === 'Typescript' ? <TypescriptIcon class="size-4"/> : null}
+  {name}
+</span>

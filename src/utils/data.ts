@@ -1,66 +1,55 @@
-import NextJS from "components/icons/Next.astro";
-import TailwindIcon from "components/icons/Tailwind.astro";
-import HTML from "components/icons/Html.astro";
-import CSS from "components/icons/Css.astro";
-import React from "components/icons/React.astro";
-import Mongo from "components/icons/Mongo.astro";
-import Node from "components/icons/Node.astro";
-import Express from "components/icons/Express.astro";
-import AstroIcon from "components/icons/AstroIcon.astro";
-import Mail from "components/icons/Mail.astro";
-import TypescriptIcon from 'components/icons/TypescriptIcon.astro'
 import type { Techs, Projects, Experience } from "./interfaces";
 
 const TAGS: Techs = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black/20 text-white",
-    icon: NextJS,
+    style: "bg-black/20 text-white",
+    icon: 'NextJS',
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#73bcf6]/20 text-[#73bcf6]",
-    icon: TailwindIcon,
+    style: "bg-[#73bcf6]/20 text-[#73bcf6]",
+    icon: 'Tailwind',
   },
   HTML: {
     name: "HTML",
-    class: "bg-orange-500/20 text-orange-500",
-    icon: HTML,
+    style: "bg-orange-500/20 text-orange-500",
+    icon: 'HTML',
   },
   CSS: {
     name: "CSS",
-    class: "bg-blue-500/20 text-blue-500",
-    icon: CSS,
+    style: "bg-blue-500/20 text-blue-500",
+    icon: 'CSS',
   },
   REACT: {
     name: "React.JS",
-    class: "bg-[#00d8ff]/20 text-[#00d8ff]",
-    icon: React,
+    style: "bg-[#00d8ff]/20 text-[#00d8ff]",
+    icon: 'React',
   },
   MONGO: {
     name: "MongoDB",
-    class: "bg-[#00ed64]/20 text-[#00ed64]",
-    icon: Mongo,
+    style: "bg-[#00ed64]/20 text-[#00ed64]",
+    icon: 'Mongo',
   },
   NODE: {
     name: "Node.JS",
-    class: "bg-[#529f43]/20 text-[#529f43]",
-    icon: Node,
+    style: "bg-[#529f43]/20 text-[#529f43]",
+    icon: 'Node',
   },
   EXPRESS: {
     name: "Express.js",
-    class: "bg-white/20 text-white",
-    icon: Express,
+    style: "bg-white/20 text-white",
+    icon: 'Express',
   },
   ASTRO: {
     name: 'Astro',
-    class: 'bg-[#ff5d01]/20 text-[#ff5d01]',
-    icon: AstroIcon,
+    style: 'bg-[#ff5d01]/20 text-[#ff5d01]',
+    icon: 'Astro',
   },
   TYPESCRIPT: {
     name: 'TypeScript',
-    class: 'bg-[#007acc]/5 text-[#007acc]',
-    icon: TypescriptIcon
+    style: 'bg-[#007acc]/5 text-[#007acc]',
+    icon: 'Typescript'
   }
 }
 

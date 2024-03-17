@@ -40,7 +40,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 
   return new Response(
