@@ -16,6 +16,8 @@ const submit = async (e: FormEvent<HTMLFormElement>) => {
     if (data.status == 201) {
       return true
     }
+
+    return false
   } catch (error) {
     console.error(error)
     return false

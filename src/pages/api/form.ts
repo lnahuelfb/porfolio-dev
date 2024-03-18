@@ -39,16 +39,23 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    return new Response(
+      JSON.stringify({
+        message: "¡Éxito!"
+      }),
+      { status: 201 }
+    );
   } catch (error) {
     console.error(error)
+
+    return new Response(
+      JSON.stringify({
+        message:'Algo salió mal'
+      }),
+      {status: 400}
+    )
   }
 
-  return new Response(
-    JSON.stringify({
-      message: "¡Éxito!"
-    }),
-    { status: 201 }
-  );
 };
 
 export const GET: APIRoute = async () => {
