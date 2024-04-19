@@ -10,7 +10,7 @@ import SectionContainer from "components/SectionContainer.astro";
 import Briefcase from "components/icons/Briefcase.astro";
 import CodeIcon from "components/icons/Code.astro";
 import Projects from "components/Projects.astro";
-import Contact from "components/Contact.astro";
+// import Contact from "components/Contact.astro";
 import About from "components/About.astro";
 ---
 
@@ -56,12 +56,9 @@ import About from "components/About.astro";
           <GitHubIcon class="size-4 md:size-6" />
           GitHub
         </SocialPill>
-        <SocialPill
-          href="mailto:lnahuelfernandezb@gmail.com"
-          class="size-4 md:size-6"
-        >
+        <SocialPill class="size-4 md:size-6">
           <MailIcon />
-          lnahuelfernandezb@gmail.com
+          <span id="email"></span>
         </SocialPill>
       </nav>
     </SectionContainer>
@@ -87,8 +84,21 @@ import About from "components/About.astro";
       <About />
     </SectionContainer>
 
-    <SectionContainer id="contacto">
+    <!-- <SectionContainer id="contacto">
       <Contact />
-    </SectionContainer>
+    </SectionContainer> -->
   </main>
 </Layout>
+
+<script>
+  const button = document.getElementById("email");
+  const email = "lnahuelfernandezb@gmail.com";
+
+  button.innerText += email;
+
+  button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(email).then(() => {
+      alert("Email copiado!");
+    });
+  });
+</script>
